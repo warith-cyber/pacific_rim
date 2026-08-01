@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05090c">
+  <meta name="description" content="An interactive 3D systems showcase of the Gipsy Danger Jaeger.">
+  <title>Gipsy Danger - Interactive Jaeger Showcase</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%2305090c' stroke='%2370e5f5' d='M32 3 57 17v30L32 61 7 47V17Z'/%3E%3Cpath fill='%23ffc363' d='m20 20 12 25 12-25-12 11Z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=8">
+</head>
+<body>
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader-reticle" aria-hidden="true">
+      <span></span>
+      <b>GD</b>
+    </div>
+    <p>INITIALISING JAEGER SYSTEMS</p>
+    <div class="load-track"><i id="loadBar"></i></div>
+    <div class="load-meta">
+      <span>GIPSY_DANGER_COMBAT.GLB</span>
+      <strong id="loadPercent">00%</strong>
+    </div>
+  </div>
+
+  <main class="showcase" id="showcase">
+    <canvas id="jaegerCanvas" aria-label="Interactive 3D model of Gipsy Danger"></canvas>
+    <div class="reference-fallback" aria-hidden="true"></div>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Return to the Gipsy Danger overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><b>III</b></span>
+        <span class="brand-copy">
+          <strong>JAEGER ARCHIVE</strong>
+          <small>PAN PACIFIC DEFENCE SYSTEM</small>
+        </span>
+      </a>
+
+      <div class="live-status" aria-label="Interactive model status">
+        <i></i>
+        <span>LIVE DIGITAL FRAME</span>
+        <b>MK-III</b>
+      </div>
+
+      <div class="header-actions">
+        <button class="text-button replay-button" id="replayPowerUp" type="button"
+          aria-label="Replay Gipsy Danger combat startup sequence" aria-controls="powerUpHud" hidden>
+          REPLAY <span class="replay-wide-label">COMBAT BOOT</span>
+        </button>
+        <button class="text-button active" id="rotationToggle" type="button" aria-pressed="true">
+          <span class="button-status"></span>
+          AUTO ROTATE
+        </button>
+        <button class="text-button" id="resetView" type="button">RESET VIEW</button>
+      </div>
+    </header>
+
+    <div class="power-up-hud" id="powerUpHud" hidden>
+      <span class="power-up-hud__signal" aria-hidden="true"><i></i></span>
+      <span class="power-up-hud__label" aria-hidden="true">
+        <small id="powerUpMode">COMBAT STARTUP</small>
+        <strong id="powerUpPhase">CORE SEQUENCE ACTIVE</strong>
+      </span>
+      <span class="power-up-hud__meter" aria-hidden="true"><i id="powerUpMeter"></i></span>
+      <button class="power-up-hud__skip" id="skipPowerUp" type="button"
+        aria-label="Skip Gipsy Danger combat startup sequence" aria-keyshortcuts="Escape">
+        SKIP SEQUENCE
+      </button>
+    </div>
+    <p class="sr-only" id="powerUpAnnouncement" role="status" aria-live="polite" aria-atomic="true"></p>
+
+    <nav class="part-nav" aria-label="Jaeger systems">
+      <div class="section-label">
+        <span>01</span>
+        <p>SYSTEM INDEX</p>
+      </div>
+      <div class="part-list" id="partList"></div>
+    </nav>
+
+    <section class="part-info" id="partInfo" aria-live="polite">
+      <div class="part-count">
+        <span id="currentNo">01</span>
+        <i></i>
+        <span id="totalNo">07</span>
+      </div>
+      <p class="part-level" id="partLevel">MARK-III // FULL FRAME</p>
+      <h1 id="partTitle">Gipsy<br>Danger</h1>
+      <p class="part-description" id="partDescription">
+        Inspect the complete reference-driven Jaeger. Drag to rotate, scroll or pinch to zoom, and select a visible component to isolate its system.
+      </p>
+      <div class="part-specs">
+        <div>
+          <span id="statLabel">DISPLAY MODE</span>
+          <strong id="statValue">FULL SYSTEM</strong>
+        </div>
+        <div>
+          <span id="focusLabel">FRAME STATUS</span>
+          <strong id="focusValue">ONLINE</strong>
+        </div>
+      </div>
+      <div class="highlight-key">
+        <i></i>
+        <span>AMBER SURFACE = ACTIVE SYSTEM</span>
+      </div>
+      <p class="model-credit">
+        LOCAL UNITY ASSET · VERIFY REDISTRIBUTION RIGHTS BEFORE PUBLIC RELEASE
+      </p>
+    </section>
+
+    <div class="view-controls" aria-label="Component navigation">
+      <button id="prevPart" type="button" aria-label="Previous Jaeger component">&#8592;</button>
+      <div>
+        <small>SELECTED SYSTEM</small>
+        <strong id="controlTitle">GIPSY DANGER</strong>
+      </div>
+      <button id="nextPart" type="button" aria-label="Next Jaeger component">&#8594;</button>
+    </div>
+
+    <div class="interaction-hint">
+      <span class="mouse-icon" aria-hidden="true"><i></i></span>
+      <div>
+        <strong>DRAG TO ROTATE</strong>
+        <small>CLICK A HAND TO DEPLOY ITS WEAPON</small>
+      </div>
+    </div>
+
+    <div class="telemetry" aria-hidden="true">
+      <span>FRAME</span>
+      <strong id="frameReadout">X 00.0&nbsp;&nbsp;Y 00.0</strong>
+    </div>
+
+    <div class="compass" aria-hidden="true">
+      <i></i>
+      <span>N</span>
+      <b>03</b>
+    </div>
+
+    <div class="corner corner-tl" aria-hidden="true"></div>
+    <div class="corner corner-tr" aria-hidden="true"></div>
+    <div class="corner corner-bl" aria-hidden="true"></div>
+    <div class="corner corner-br" aria-hidden="true"></div>
+
+    <div class="model-error" id="modelError" role="alert">
+      <strong>MODEL LINK INTERRUPTED</strong>
+      <span>The reference image remains available while the 3D asset is checked.</span>
+    </div>
+  </main>
+
+  <noscript>This interactive showcase requires JavaScript to display the 3D model.</noscript>
+  <script type="module" src="./app.js?v=12"></script>
+</body>
+</html>
