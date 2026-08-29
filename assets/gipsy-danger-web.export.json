@@ -1,0 +1,78 @@
+{
+  "source_glb": "C:\\xampp\\htdocs\\pacific_rim\\gipsy_danger_-_pacific_rim.glb",
+  "output_blend": "C:\\xampp\\htdocs\\pacific_rim\\refinement\\gipsy_danger_web.blend",
+  "output_glb": "C:\\xampp\\htdocs\\pacific_rim\\assets\\gipsy-danger-web.glb",
+  "source_credit": {
+    "author": "oiopu",
+    "title": "Gipsy danger - Pacific rim",
+    "source": "https://sketchfab.com/3d-models/gipsy-danger-pacific-rim-0d71c77db3cd434b9bc2681f931fa3a4",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "source_stats_without_stray_icosphere": {
+    "objects": 5,
+    "vertices": 5396,
+    "triangles": 6150,
+    "bounds_min": [
+      -0.26985,
+      -0.21163,
+      -0.00654
+    ],
+    "bounds_max": [
+      0.23312,
+      0.09338,
+      0.81171
+    ],
+    "bounds_size": [
+      0.50298,
+      0.30501,
+      0.81826
+    ]
+  },
+  "prepared_stats": {
+    "objects": 10,
+    "vertices": 5524,
+    "triangles": 6150,
+    "bounds_min": [
+      -4.45653,
+      -2.70244,
+      0.0
+    ],
+    "bounds_max": [
+      4.45653,
+      2.70244,
+      14.5
+    ],
+    "bounds_size": [
+      8.91305,
+      5.40488,
+      14.5
+    ]
+  },
+  "normalisation_scale": 17.72059575,
+  "selectable_system_counts": {
+    "arms": 4,
+    "back": 1,
+    "chest": 2,
+    "head": 1,
+    "legs": 1,
+    "shoulders": 1
+  },
+  "glb_selectable_system_counts": {
+    "arms": 4,
+    "back": 1,
+    "chest": 2,
+    "head": 1,
+    "legs": 1,
+    "shoulders": 1
+  },
+  "file_size_bytes": 568836,
+  "sha256": "6aa348289485684cef0e262f5a998abfb59147b1a00367278346d776b6b84e26",
+  "glb_nodes": 11,
+  "glb_meshes": 10,
+  "glb_materials": 3,
+  "glb_textures": 3,
+  "glb_skins": 0,
+  "glb_animations": 0,
+  "validated": true
+}

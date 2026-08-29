@@ -1,0 +1,102 @@
+{
+  "source_blend": "C:\\xampp\\htdocs\\pacific_rim\\refinement\\striker_eureka_refined.blend",
+  "output_glb": "C:\\xampp\\htdocs\\pacific_rim\\assets\\pacific-rim-striker.glb",
+  "file_size_bytes": 2754256,
+  "sha256": "2494f6fac862f269783d014239faa87ddc2ff326eb38171dcf33ce2b792759f6",
+  "collections": [
+    "STRIKER_REFINED_MODEL",
+    "STRIKER_REFINED_DETAILS"
+  ],
+  "root": "STRIKER_REFINED_ROOT",
+  "source_object_types": {
+    "EMPTY": 1,
+    "FONT": 2,
+    "MESH": 292
+  },
+  "source_stats": {
+    "geometry_objects": 294,
+    "vertices": 41676,
+    "triangles": 79752,
+    "bounds_min": [
+      -4.54985,
+      -1.91971,
+      0.02
+    ],
+    "bounds_max": [
+      4.54985,
+      2.585,
+      14.6048
+    ],
+    "bounds_size": [
+      9.0997,
+      4.50471,
+      14.5848
+    ],
+    "bounds_center": [
+      0.0,
+      0.33265,
+      7.3124
+    ]
+  },
+  "imported_object_types": {
+    "EMPTY": 1,
+    "MESH": 294
+  },
+  "imported_stats": {
+    "geometry_objects": 294,
+    "vertices": 79295,
+    "triangles": 79752,
+    "bounds_min": [
+      -4.54985,
+      -1.91971,
+      0.02
+    ],
+    "bounds_max": [
+      4.54985,
+      2.585,
+      14.6048
+    ],
+    "bounds_size": [
+      9.0997,
+      4.50471,
+      14.5848
+    ],
+    "bounds_center": [
+      0.0,
+      0.33265,
+      7.3124
+    ]
+  },
+  "materials": [
+    "Refined Amber Visor",
+    "Refined Armour Grey",
+    "Refined Bronze Mechanics",
+    "Refined Cyan Systems",
+    "Refined Dark Armour",
+    "Refined Decal Silver",
+    "Refined Light Armour",
+    "Refined Mechanical Black",
+    "Refined Steel",
+    "Refined Warning Red"
+  ],
+  "selectable_system_counts": {
+    "arms": 80,
+    "back": 36,
+    "chest": 65,
+    "head": 13,
+    "legs": 76,
+    "shoulders": 24
+  },
+  "glb_selectable_system_counts": {
+    "arms": 80,
+    "back": 36,
+    "chest": 65,
+    "head": 13,
+    "legs": 76,
+    "shoulders": 24
+  },
+  "glb_nodes": 295,
+  "glb_meshes": 294,
+  "glb_materials": 10,
+  "validated": true
+}
